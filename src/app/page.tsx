@@ -1,29 +1,27 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
+import { get } from '@vercel/edge-config'
+import { redirect } from 'next/navigation'
 import styles from '@/styles/page.module.css'
 import SocialButton from '@/components/socialButton'
-import type { Link } from '@/types/link.types'
+import type { Profile, Link } from '@/types/data.types'
+
+export const dynamic = 'force-dynamic'
 
 const inter = Inter({ subsets: ['latin'] })
 
-async function getLinks(): Promise<Link[]> {
-  const res = await fetch(process.env.LINKS_URL as string, { next: { revalidate: 10 * 60 } })
-  if (!res.ok) {
-    throw new Error(`HTTP error! status: ${res.status}`)
-  }
-  const links = await res.json()
-  return links
-}
+export default async function HomePage() {
+  const profile = (await get('data')) as Profile
+  if (!profile) redirect('/404')
 
-export default async function Home() {
-  const links = await getLinks()
+  const { links }: { links: Link[] } = profile
 
   return (
     <main className={inter.className}>
       <div className={styles.container}>
         <div className={styles.column}>
           <Image
-            src='/memoji.png'
+            src={profile.avatar || '/avatar.png'}
             alt='Logo'
             className={styles.avatar}
             width={128}
@@ -31,18 +29,22 @@ export default async function Home() {
             priority
           />
 
-          <h1 className={styles.title}>Igor Matheus</h1>
+          <h1 className={styles.name}>
+            {profile.name}
+            <Image
+              src='/icons/check-badge.svg'
+              alt='Check'
+              width={25}
+              height={25}
+              className={styles.check}
+            />
+          </h1>
 
-          <p className={styles.description}>
-            Aqui é um lugar onde você pode conectar-se comigo! Sou estudante de programação e
-            infraestrutura, amo jogos competitivos e hardware.
-          </p>
-          {links.map(({ href, brand, description }) => (
+          <p className={styles.description}>{profile.description}</p>
+          {links.map((link) => (
             <SocialButton
-              key={brand}
-              href={href}
-              brand={brand}
-              description={description}
+              key={link.href}
+              {...link}
             />
           ))}
         </div>

@@ -12,13 +12,14 @@
   white-space: wrap;
   border-radius: 8px;
   cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .button:hover,
 .button:focus {
   border-color: #888;
   outline: 0;
-  filter: brightness(90%);
+  opacity: 0.8;
 }
 
 .whatsapp {
@@ -66,7 +67,7 @@
 .github {
   composes: button;
   color: #ffffff;
-  background-color: #000000;
+  background-color: #121214;
 }
 
 .linkedin {

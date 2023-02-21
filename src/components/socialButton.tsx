@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import styles from '@/styles/brands.module.css'
-import type { Link } from '@/types/link.types'
+import type { Link } from '@/types/data.types'
 
-export default function SocialButton({ href, brand, description }: Link) {
+export default function SocialButton({ href, brand, title }: Link) {
   return (
     <div className={styles.link}>
       <a
@@ -17,9 +17,8 @@ export default function SocialButton({ href, brand, description }: Link) {
           className={styles.icon}
           width={20}
           height={20}
-          priority
         />
-        {description}
+        {title}
       </a>
     </div>
   )
