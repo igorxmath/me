@@ -48,6 +48,14 @@ export default async function HomePage() {
             />
           ))}
         </div>
+        <p>
+          <a
+            className={styles.mailto}
+            href={'mailto:' + profile.email}
+          >
+            {profile.email}
+          </a>
+        </p>
       </div>
     </main>
   )
