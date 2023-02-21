@@ -2,14 +2,9 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/page.module.css'
 import SocialButton from '@/components/socialButton'
+import type { Link } from '@/types/link.types'
 
 const inter = Inter({ subsets: ['latin'] })
-
-type Link = {
-  href: string
-  brand: string
-  description: string
-}
 
 async function getLinks(): Promise<Link[]> {
   const res = await fetch(process.env.LINKS_URL as string, { next: { revalidate: 10 * 60 } })
@@ -42,19 +37,14 @@ export default async function Home() {
             Aqui é um lugar onde você pode conectar-se comigo! Sou estudante de programação e
             infraestrutura, amo jogos competitivos e hardware.
           </p>
-          <div className={styles.links}>
-            {links.map(({ href, brand, description }) => (
-              <>
-                <SocialButton
-                  key={brand}
-                  href={href}
-                  brand={brand}
-                  description={description}
-                />
-                <br />
-              </>
-            ))}
-          </div>
+          {links.map(({ href, brand, description }) => (
+            <SocialButton
+              key={brand}
+              href={href}
+              brand={brand}
+              description={description}
+            />
+          ))}
         </div>
       </div>
     </main>
