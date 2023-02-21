@@ -69,6 +69,7 @@ You can then provide this Profile object to the HomePage component, which will d
         "brand": "github",
         "title": "GitHub"
       },
+      [...]
     ]
   }
   ```

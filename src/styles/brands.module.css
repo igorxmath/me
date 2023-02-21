@@ -67,7 +67,7 @@
 .github {
   composes: button;
   color: #ffffff;
-  background-color: #121214;
+  background-color: #1f1f21;
 }
 
 .linkedin {
