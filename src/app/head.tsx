@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Igor Matheus</title>
+      <title>My profile</title>
       <meta
         content='width=device-width, initial-scale=1'
         name='viewport'
