@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import { get } from '@vercel/edge-config'
 import { redirect } from 'next/navigation'
 import styles from '@/styles/page.module.css'
@@ -8,8 +7,6 @@ import type { Profile, Link } from '@/types/data.types'
 
 export const dynamic = 'force-dynamic'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export default async function HomePage() {
   const profile = (await get('data')) as Profile
   if (!profile) redirect('/404')
@@ -17,7 +14,7 @@ export default async function HomePage() {
   const { links }: { links: Link[] } = profile
 
   return (
-    <main className={inter.className}>
+    <main>
       <div className={styles.container}>
         <div className={styles.column}>
           <Image
