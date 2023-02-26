@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { get } from '@vercel/edge-config'
-import { redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import styles from '@/styles/page.module.css'
 import SocialButton from '@/components/socialButton'
 import type { Profile, Link } from '@/types/data.types'
@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
   const profile = (await get('data')) as Profile
-  if (!profile) redirect('/404')
+  if (!profile) notFound()
 
   const { links }: { links: Link[] } = profile
 
