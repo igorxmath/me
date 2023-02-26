@@ -1,15 +1,7 @@
-html {
-  font-size: 100%;
-  color-scheme: light dark;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  background-color: black;
-  color: white;
-}
-@media screen and (prefers-color-scheme: light) {
-  body {
-    background-color: white;
-    color: black;
-  }
+html {
+  color-scheme: dark;
 }

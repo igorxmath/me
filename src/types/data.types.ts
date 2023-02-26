@@ -1,3 +1,5 @@
+import { ButtonProps } from '@ui/Button'
+
 export type Profile = {
   id: number
   name: string
@@ -9,6 +11,6 @@ export type Profile = {
 
 export type Link = {
   href: string
-  brand: string
+  brand: ButtonProps['brand']
   title: string
 }
