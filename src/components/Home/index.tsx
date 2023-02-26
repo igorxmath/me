@@ -35,23 +35,30 @@ export default function Home({ profile, links }: { profile: Profile; links: Link
               key={link.title}
               className='flex flex-col items-center justify-center w-full'
             >
-              <Button
-                size='large'
-                fullWidth
-                brand={link.brand}
+              <a
+                href={link.href}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='w-full'
               >
-                <div className='flex items-center justify-center'>
-                  <Image
-                    src={`/icons/${link.brand}.svg`}
-                    className='mr-2'
-                    alt={link.title}
-                    width={20}
-                    height={20}
-                    style={{ width: 20, height: 20 }}
-                  />
-                  {link.title}
-                </div>
-              </Button>
+                <Button
+                  size='large'
+                  fullWidth
+                  brand={link.brand}
+                >
+                  <div className='flex items-center justify-center'>
+                    <Image
+                      src={`/icons/${link.brand}.svg`}
+                      className='mr-2'
+                      alt={link.title}
+                      width={20}
+                      height={20}
+                      style={{ width: 20, height: 20 }}
+                    />
+                    {link.title}
+                  </div>
+                </Button>
+              </a>
             </div>
           ))}
         </div>
