@@ -5,8 +5,8 @@ import { Button } from '@ui/Button'
 export default function Home({ profile, links }: { profile: Profile; links: Link[] }) {
   return (
     <div className='flex flex-col items-center justify-center min-h-screen'>
-      {/* {w-full lg:w-1/2} */}
-      <main className='flex flex-col items-center justify-center max-w-4xl flex-1 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64 text-center space-y-4'>
+      {/* {w-full lg:w-1/2} max-w-4xl */}
+      <main className='flex flex-col items-center justify-center w-full sm:w-1/2 flex-1 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64 text-center space-y-4'>
         <div className='flex flex-col items-center justify-center space-y-4'>
           <Image
             src={profile.avatar}
