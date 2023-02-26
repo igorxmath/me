@@ -5,6 +5,10 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Home',
+  description: 'My personal website',
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
