@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import { AnalyticsWrapper } from '@/components/analytics'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,7 +18,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang='en'
       className={inter.className}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <AnalyticsWrapper />
+      </body>
     </html>
   )
 }
