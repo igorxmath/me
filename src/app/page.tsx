@@ -3,8 +3,8 @@ import { notFound } from 'next/navigation'
 import Home from '@/components/Home'
 import type { Profile, Link } from '@/types/data.types'
 
-export const dynamic = 'force-dynamic'
-export const runtime = 'experimental-edge'
+export const dynamic = 'force-dynamic',
+  runtime = 'experimental-edge'
 
 export default async function HomePage() {
   const profile = (await get('data')) as Profile
