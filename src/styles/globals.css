@@ -5,3 +5,9 @@
 html {
   color-scheme: dark;
 }
+
+@layer base {
+  body {
+    @apply bg-black text-zinc-200;
+  }
+}
