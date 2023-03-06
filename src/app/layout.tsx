@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: 'My personal website',
     images: [
       {
-        url: 'https://igormatheus.com.br/og.png',
+        url: 'https://igormatheus.com.br/favicon.svg',
         width: 800,
         height: 600,
         alt: 'Igor Matheus',

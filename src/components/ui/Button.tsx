@@ -16,6 +16,7 @@ export const buttonStyles = cva(
         twitch: 'bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900',
         discord: 'bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700',
         spotify: 'bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800',
+        blog: 'bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700',
         soundcloud: 'bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800',
       },
       fullWidth: {
