@@ -18,6 +18,7 @@ export const buttonStyles = cva(
         spotify: 'bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800',
         blog: 'bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700',
         soundcloud: 'bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800',
+        openai: 'bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700',
       },
       fullWidth: {
         true: 'w-full',
