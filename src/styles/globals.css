@@ -6,6 +6,10 @@ html {
   color-scheme: dark;
 }
 
+input[type='search'] {
+  -webkit-appearance: none;
+}
+
 @layer base {
   body {
     @apply bg-zinc-900 text-zinc-200;
