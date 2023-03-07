@@ -3,7 +3,7 @@ export type ChatGPTMessage = {
   content: string
 }
 
-export type OpenAIStreamPayload = {
+export type ChatGPTRequest = {
   model: string
   messages: ChatGPTMessage[]
   temperature?: number
@@ -32,6 +32,22 @@ export type ChatGPTResponse = {
       }
       finish_reason: string
       index: number
+    },
+  ]
+}
+
+export type ModerationResponse = {
+  id: string
+  model: string
+  results: [
+    {
+      flagged: boolean
+      categories: {
+        [key: string]: boolean
+      }
+      category_scores: {
+        [key: string]: number
+      }
     },
   ]
 }
