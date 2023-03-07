@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.0",
     "autoprefixer": "^10.4.13",
     "eslint-config-next": "^13.2.3",
