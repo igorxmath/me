@@ -2,7 +2,7 @@ import { ChatGPTMessage, ChatGPTRequest } from '@/types/chat.types'
 import { OpenAIModeration, OpenAIStream } from '@/utils/OpenAIStream'
 import { NextResponse } from 'next/server'
 
-export const runtime = 'experimental-edge'
+export const runtime = 'edge'
 
 export async function POST(request: Request) {
   if (!process.env.OPENAI_API_KEY || !process.env.OPENAI_ENDPOINT) {
