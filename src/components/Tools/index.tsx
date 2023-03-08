@@ -52,7 +52,7 @@ export default function SearchCard({ suggestions }: { suggestions: string[] }) {
 
   return (
     <div className='flex min-h-screen flex-col items-center justify-center px-4 sm:px-6 lg:px-8'>
-      <h1 className='mb-4 text-2xl font-bold text-zinc-200 sm:text-5xl'>Get instant tips</h1>
+      <h1 className='mb-4 text-3xl font-bold sm:text-5xl'>Get instant tips</h1>
       <p className='mb-4 text-center text-base text-zinc-300 sm:text-lg'>
         Type your question below and let our AI supplement your knowledge
       </p>
@@ -117,7 +117,7 @@ export default function SearchCard({ suggestions }: { suggestions: string[] }) {
               <span className='h-3 w-3 rounded-full bg-green-500'></span>
             </div>
 
-            <p className='text-justify text-zinc-100'>{message}</p>
+            <p className='text-justify'>{message}</p>
           </div>
         )}
 

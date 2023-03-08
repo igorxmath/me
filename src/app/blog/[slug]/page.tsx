@@ -26,7 +26,7 @@ export default async function BlogPostPage({ params: { slug } }: Params) {
     <section>
       <div className='mx-auto max-w-4xl py-12 px-4 sm:px-6 lg:px-8'>
         <div className='mx-auto max-w-3xl'>
-          <h1 className='mb-4 text-4xl font-bold text-zinc-200'>{post.meta.title}</h1>
+          <h1 className='mb-4 text-4xl font-bold'>{post.meta.title}</h1>
           <p className='mb-4 text-zinc-300'>Published on {post.meta.publishDate}</p>
           <Image
             src={post.meta.thumbnail}
@@ -34,6 +34,7 @@ export default async function BlogPostPage({ params: { slug } }: Params) {
             className='mb-8 rounded-lg shadow-lg'
             width={800}
             height={400}
+            priority={true}
           />
           <article className='prose dark:prose-invert'>{post.content}</article>
         </div>

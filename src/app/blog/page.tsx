@@ -13,6 +13,7 @@ export default async function BlogPage() {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
+            as={`/blog/${post.slug}`}
           >
             <div className='ease overflow-hidden rounded-2xl border-2 border-zinc-700 bg-zinc-800 transition-all duration-200 hover:-translate-y-1 hover:shadow-white'>
               <Image
@@ -21,7 +22,7 @@ export default async function BlogPage() {
                 alt={post.title}
                 width={500}
                 height={400}
-                loading='lazy'
+                priority={true}
               />
               <div className='h-36 border-t border-zinc-700 py-8 px-5'>
                 <h3 className='text-xl tracking-wide'>{post.title}</h3>

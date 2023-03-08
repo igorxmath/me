@@ -5,6 +5,8 @@ import type { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
+export const runtime = 'experimental-edge'
+
 export const metadata: Metadata = {
   title: 'Igor Matheus',
   description: 'My personal website',

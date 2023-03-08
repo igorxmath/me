@@ -6,10 +6,10 @@ export type Profile = {
   email: string
   description: string
   avatar: string
-  links: Link[]
+  links: Social[]
 }
 
-export type Link = {
+export type Social = {
   href: string
   brand: ButtonProps['brand']
   title: string

@@ -7,7 +7,10 @@ export default function NavBar() {
       <div className='mx-auto max-w-6xl px-6'>
         <div className='align-center relative flex flex-row justify-between'>
           <div className='flex flex-1 items-center'>
-            <Link href={'/blog'}>
+            <Link
+              href={'/blog'}
+              as={'/blog'}
+            >
               <Image
                 src={'/favicon.svg'}
                 alt={'ACME'}
@@ -19,7 +22,8 @@ export default function NavBar() {
             <nav className='flex flex-1 justify-end space-x-8'>
               <Link
                 href={'/'}
-                className='inline-flex cursor-pointer items-center rounded-md p-1 font-medium leading-6 text-zinc-200 transition duration-75 ease-in-out'
+                as={'/'}
+                className='inline-flex cursor-pointer items-center rounded-md p-1 font-medium leading-6 transition duration-75 ease-in-out'
               >
                 Contact
               </Link>

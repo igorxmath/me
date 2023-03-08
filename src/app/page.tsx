@@ -2,16 +2,15 @@ import Image from 'next/image'
 import { get } from '@vercel/edge-config'
 import { notFound } from 'next/navigation'
 import { Button } from '@ui/Button'
-import type { Profile, Link } from '@/types/data.types'
+import type { Profile, Social } from '@/types/data.types'
 
-export const dynamic = 'force-dynamic',
-  runtime = 'experimental-edge'
+export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
   const profile = (await get('data')) as Profile
   if (!profile) notFound()
 
-  const { links }: { links: Link[] } = profile
+  const { links }: { links: Social[] } = profile
 
   return (
     <div className='flex min-h-screen flex-col items-center justify-center'>
