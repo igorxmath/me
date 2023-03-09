@@ -13,7 +13,6 @@ export default function SearchCard({ suggestions }: { suggestions: string[] }) {
   }
 
   const handleClick = async (query: string) => {
-    const messages = [{ role: 'user', content: query }]
     setLoading(true)
     setMessage(' ')
 
@@ -22,11 +21,11 @@ export default function SearchCard({ suggestions }: { suggestions: string[] }) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ messages }),
+      body: JSON.stringify({ query }),
     })
 
     if (!res.ok) {
-      setMessage('Something went wrong. Please try again.')
+      setMessage(`Something went wrong. Please try again. Error: ${await res.text()}`)
       setLoading(false)
       return
     }

@@ -1,9 +1,7 @@
 import { createParser, ParsedEvent, ReconnectInterval } from 'eventsource-parser'
-import { ChatGPTRequest, ChatGPTMessage, ModerationResponse } from '@/types/chat.types'
+import { ChatGPTRequest, ModerationResponse } from '@/types/chat.types'
 
-export async function OpenAIModeration(messages: ChatGPTMessage[]) {
-  const input = messages.map((message) => message.content)
-
+export async function OpenAIModeration(input: string | string[]) {
   const res = await fetch(`${process.env.OPENAI_ENDPOINT}/moderations`, {
     method: 'POST',
     headers: {
