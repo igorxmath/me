@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { get } from '@vercel/edge-config'
 import { notFound } from 'next/navigation'
 import { Button } from '@ui/Button'
@@ -43,7 +44,7 @@ export default async function HomePage() {
               key={link.title}
               className='flex w-full flex-col items-center justify-center'
             >
-              <a
+              <Link
                 href={link.href}
                 target='_blank'
                 rel='noopener noreferrer'
@@ -66,18 +67,18 @@ export default async function HomePage() {
                     {link.title}
                   </div>
                 </Button>
-              </a>
+              </Link>
             </div>
           ))}
         </div>
         <footer>
-          <a
+          <Link
             href={`mailto:${profile.email}`}
             target='_blank'
             rel='noopener noreferrer'
           >
             {profile.email}
-          </a>
+          </Link>
         </footer>
       </main>
     </div>
