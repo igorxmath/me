@@ -19,7 +19,7 @@
     "class-variance-authority": "^0.4.0",
     "eslint": "8.35.0",
     "eventsource-parser": "^0.1.0",
-    "next": "^13.2.4",
+    "next": "13.2.3",
     "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
