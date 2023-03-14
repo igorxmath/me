@@ -3,6 +3,7 @@ import path from 'path'
 import { compileMDX } from 'next-mdx-remote/rsc'
 
 type PostMeta = {
+  id: string
   title: string
   author: string
   description: string
@@ -14,6 +15,7 @@ type PostMeta = {
 type Post = {
   meta: PostMeta
   content: React.ReactElement<unknown, string | React.JSXElementConstructor<unknown>>
+  fileContent: string
 }
 
 const rootDirectory = path.join(process.cwd(), 'src', 'posts')
@@ -30,7 +32,7 @@ export const getPostBySlug = async (slug: string) => {
       options: { parseFrontmatter: true },
     })
 
-  return { meta: { ...frontmatter, slug: realSlug }, content }
+  return { meta: { ...frontmatter, slug: realSlug }, content, fileContent }
 }
 
 export const getAllPostsMeta = async () => {

@@ -25,7 +25,7 @@ export default function SearchCard({ suggestions }: { suggestions: string[] }) {
     })
 
     if (!res.ok) {
-      setMessage(`Something went wrong. Please try again. Error: ${await res.text()}`)
+      setMessage(`Something went wrong. ${await res.text()}`)
       setLoading(false)
       return
     }
